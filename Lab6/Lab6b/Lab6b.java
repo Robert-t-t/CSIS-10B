@@ -1,19 +1,20 @@
-package Lab5PartB;
+package Lab6.Lab6b;
 
 /**
-   A driver that demonstrates the class AList.
+   Lab6b.java - Tester for LinkedList class
    
    @author Frank M. Carrano, modified by Tom Rebold
    @version 3.0
 */
-public class Lab5b
+public class Lab6b
 {
     public static void main(String[] args) 
     {
-        System.out.println("\f");
-        //******************** Problem 1 getEntry method **********************
+        System.out.println("\f");    
+        
+        //******************** Problem 1 add and getEntry method **********************
         System.out.println("****************  Problem 1 *********************\n");
-        ArrayList<String> myList = new ArrayList<String>();
+        LinkedList<String> myList = new LinkedList<String>();
 
         System.out.println("Testing add to end: Add 15, 25, 35, 45");
           myList.add("15");
@@ -21,9 +22,12 @@ public class Lab5b
           myList.add("35");
           myList.add("45");
       
-        System.out.println("\n\nList should contain\n15 25 35 45 ");
+        System.out.println("\n\nmyList should contain\n15 25 35 45 ");
+        System.out.println("mylist actually contains: " + myList);
+        
+        System.out.println("using getEntry to display the items in myList");
         displayList(myList);  // uses getEntry
-
+        
         System.out.println("\nIs List empty? " + myList.isEmpty());
 
         System.out.println("Add more entries to end: Add 55, 65, 75, 85, 95");
@@ -39,8 +43,8 @@ public class Lab5b
         System.out.println("\n\nList should contain 15 25 35 45 55 65 75 85 95");
         displayList(myList);
         
-        //*************************** END Problem 1 ***********************************/
-        //*************************** Problem 2 add at position **************** 
+        /*************************** END Problem 1 ***********************************/
+        //*************************** Problem 2 add at position ****************
         System.out.println("\n\n****************  Problem 2 *********************\n");
         System.out.println("Testing clear() ");
         myList.clear();
@@ -49,8 +53,8 @@ public class Lab5b
         System.out.println("Is list empty? " + myList.isEmpty());
 
         System.out.println("-------------------------\n");
-        System.out.println("Create a new list of max size 8.\n");
-        myList = new ArrayList<String>(8);  // 8 is max size
+        System.out.println("Create a new list \n");
+        myList = new LinkedList<String>();  
 
         System.out.println("Testing add at position ");
         System.out.println("Add 15 at position 1: returns " + myList.add(1, "15"));
@@ -75,7 +79,7 @@ public class Lab5b
         
         System.out.println("Is List empty? " + myList.isEmpty());
         //*************************** END Problem 2 ***********************************/
-        //*************************** Problem 3 remove, replace **************** 
+        //*************************** Problem 3 remove, replace ****************
         System.out.println("\n\n****************  Problem 3 *********************\n");
             
         System.out.println("\n-------------------------\n");
@@ -118,7 +122,7 @@ public class Lab5b
         System.out.println("List contains 4  returns : " + myList.contains("4"));
         System.out.println("List contains 12 returns : " + myList.contains("12"));
         //*************************** END Problem 3 ***********************************/
-        //*************************** Problem 4 getPosition, moveToEnd ********************** 
+        //*************************** Problem 4 getPosition, moveToEnd **********************
         System.out.println("\n\n****************  Problem 4 *********************\n");
         
         System.out.println("The position of 92 is " + myList.getPosition("92") + "(should be 1)");         
@@ -133,24 +137,16 @@ public class Lab5b
         myList.moveToEnd(4);
         System.out.println("The number 50 should be at the end");
         displayList(myList);
-        
+
+
         myList.moveToEnd(myList.getPosition("52"));
         System.out.println("The number 52 should be at the end");
         displayList(myList);
-        
-        //*************************** END Problem 4 ***********************************/
-        /*************************** Problem 5 Replace without replace at the client level ******** 
-        // write statements to replace the "53" with "35" without knowing where it is, or using replace
-        // (use methods getIndex, remove and add acting on myList)
 
-        System.out.println("\n\n****************  Problem 5 *********************\n");
-        
-        System.out.println("after replacing 53 with 35");
-        displayList(myList);        
-        //*************************** END Problem 5 ***********************************/        
+        //*************************** END Problem 4 ***********************************/     
     } // end testStringList
 
-    public static void displayList(ArrayList<String> list)
+    public static void displayList(LinkedList<String> list)
     {
       int numberOfEntries = list.getLength();
       
